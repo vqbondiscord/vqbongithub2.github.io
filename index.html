@@ -5,52 +5,119 @@
   <title>TaskViewer.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .section {
+      padding: 80px 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .download-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .download-box {
+      display: inline-block;
+      background-color: white;
+      color: #0078d7;
+      border: 2px solid #0078d7;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+
+    .download-box:hover {
+      background-color: #f0f0f0;
+    }
+
+    .hero-img {
+      max-width: 100%;
+      display: block;
+      margin: 40px auto 0 auto;
+    }
+
+    .section p {
+      font-size: 1.1em;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    @media (max-width: 600px) {
+      .download-group {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="logo">TaskViewer.org</div>
-    <div class="links">
+    <div class="logo">TaskViewer</div>
+    <div>
       <a href="#home">Home</a>
-      <a href="#features">Features</a>
       <a href="#download">Download</a>
+      <a href="#features">Features</a>
       <a href="#about">About</a>
     </div>
   </nav>
 </header>
 
 <main>
-  <section id="home">
+
+  <section id="home" class="section center">
     <h1>Welcome to TaskViewer</h1>
-    <p>TaskViewer is a lightweight, fast, and resource-friendly process monitoring tool.</p>
-    <img src="Image.png" alt="TaskViewer Interface" />
+    <p>TaskViewer is a lightweight, fast, and resource-friendly process monitoring tool for Windows.</p>
+    <img class="hero-img" src="Image.png" alt="TaskViewer Interface" />
   </section>
 
-  <section id="features">
+  <section id="download" class="section center">
+    <h2>Download TaskViewer</h2>
+    <p>All downloads below link to the same version of TaskViewer for simplicity. Replace with unique files if needed.</p>
+
+    <div class="download-group">
+      <a class="download-box" href="TaskViewer.exe">Download Installer</a>
+      <a class="download-box" href="TaskViewer.exe">Download Installer 64-bit</a>
+      <a class="download-box" href="TaskViewer.exe">Download Portable Zip</a>
+      <a class="download-box" href="TaskViewer.exe">Download Portable Zip 64-bit</a>
+      <a class="download-box" href="TaskViewer.exe">Download Lite Installer</a>
+      <a class="download-box" href="TaskViewer.exe">Download Lite Installer 64-bit</a>
+    </div>
+  </section>
+
+  <section id="features" class="section">
     <h2>Features</h2>
     <ul>
       <li>Small installation file</li>
       <li>Clean and simple user interface</li>
-      <li>Quick file indexing</li>
-      <li>Quick searching</li>
-      <li>Quick startup</li>
-      <li>Minimal resource usage</li>
-      <li>Small database on disk</li>
-      <li>Real-time updating</li>
+      <li>Quick file indexing and search</li>
+      <li>Fast startup and minimal footprint</li>
+      <li>Low memory and disk usage</li>
+      <li>Compact, efficient database</li>
+      <li>Real-time process updates</li>
     </ul>
   </section>
 
-  <section id="download">
-    <h2>Download</h2>
-    <p>Click the button below to download TaskViewer:</p>
-    <a class="download-button" href="TaskViewer.exe">Download TaskViewer.exe</a>
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>TaskViewer gives you real-time insight into all active processes on your system. It’s designed for users who value simplicity, speed, and control, with a zero-clutter interface that just works.</p>
   </section>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>TaskViewer is designed to give users a clear view of all processes running on their system. It’s built for speed and simplicity, with minimal system impact and real-time updates.</p>
-  </section>
 </main>
 
 <footer>
