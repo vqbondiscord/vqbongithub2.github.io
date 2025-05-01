@@ -6,9 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="style.css" />
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #0078d7;
+      --border: #ccc;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --accent: #66b2ff;
+      --border: #333;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      background: var(--bg);
+    }
+
+    nav {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .section {
       padding: 80px 20px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--border);
     }
 
     .section h2 {
@@ -31,13 +83,18 @@
     .download-box {
       display: inline-block;
       background-color: white;
-      color: #0078d7;
-      border: 2px solid #0078d7;
+      color: var(--accent);
+      border: 2px solid var(--accent);
       padding: 12px 24px;
       text-decoration: none;
       font-weight: bold;
       border-radius: 4px;
       transition: background-color 0.2s ease;
+    }
+
+    body.dark .download-box {
+      background-color: #1e1e1e;
+      color: var(--accent);
     }
 
     .download-box:hover {
@@ -56,11 +113,46 @@
       margin: auto;
     }
 
-    @media (max-width: 600px) {
-      .download-group {
-        flex-direction: column;
-        align-items: center;
+    ul.feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.feature-list li::before {
+      content: "• ";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+      ul.feature-list {
+        grid-template-columns: 1fr;
       }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid var(--border);
+      background-color: var(--bg);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 0.9em;
+      border-radius: 4px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -100,7 +192,7 @@
 
   <section id="features" class="section">
     <h2>Features</h2>
-    <ul>
+    <ul class="feature-list">
       <li>Small installation file</li>
       <li>Clean and simple user interface</li>
       <li>Quick file indexing and search</li>
@@ -121,6 +213,14 @@
 <footer>
   &copy; 2025 TaskViewer.org. All rights reserved.
 </footer>
+
+<button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('dark');
+  }
+</script>
 
 </body>
 </html>
